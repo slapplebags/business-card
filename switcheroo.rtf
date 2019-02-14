@@ -1,0 +1,42 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0  \
+\
+clock timezone PST -8 //UTC\
+clock summer-time PDT recurring //remove - UTC\
+no network-clock-participate slot 1\
+ --More-- ^H^H^H^H^H^H^H^H^H        ^H^H^H^H^H^H^H^H^Hno network-clock-participate wic 0\
+ip cef\
+--More-- ^H^H^H^H^H^H^H^H^H        ^H^H^H^H^H^H^H^H^H!\
+!\
+username root secret 5 $1$zD.o$VvWRmnEipKgD1WbDXuBTI/ /add own\
+username erico secret 5 $1$C6l3$xIPMNxEiTcMdw.7PvuKJS.\
+!\
+!\
+!\
+!\
+!\
+!\
+interface FastEthernet0/0 /gig0/0/0\
+ ip address 98.179.252.201 255.255.255.224\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0  ip nat outside\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0  ip virtual-reassembly\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0  duplex auto\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0  speed auto\
+!\
+interface Serial0/0\
+ no ip address\
+ shutdown\
+!\
+interface FastEthernet0/1 /0/3/0 + 0/3/1 vlans stup 2 vlans copy int fe0/1 to vlan 23.1 and 23.9 /28 networks\
+\
+}
